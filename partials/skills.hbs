@@ -1,26 +1,28 @@
 {{#if resume.skills.length}}
-<section id="skills">
-	<h2>Skills</h2>
-	{{#each resume.skills}}
-	<div class="item">
-		{{#if name}}
-		<div class="name">
-			{{name}}
-		</div>
-		{{/if}}
-		{{#if level}}
-		<div class="level">
-			<em>{{level}}</em>
-		</div>
-		{{/if}}
-		{{#if keywords.length}}
-		<ul class="keywords">
-			{{#each keywords}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
-	</div>
-	{{/each}}
-</section>
+    <article class="grid margin-section">
+        <section class="grid__col-12 grid__col-xs-4">
+            <div class="grid__cell border-top border-heavy padding-inline-top">
+                <h4 class="color-red">Skills</h4>
+            </div>
+        </section>
+
+        <section class="grid__col-12 grid__col-xs-8">
+            <div class="grid__cell border-top border-heavy padding-inline-top">
+                <div class="grid grid--justify-end">
+                    {{#each resume.skills}}
+                        {{#if name}}
+                            <div class="grid__col-6 grid__col-xs-3 padding-none">
+                                <h6>{{name}}</h6>
+                            </div>
+                        {{/if}}
+                        {{#if level}}
+                            <div class="grid__col-6 grid__col-xs-3 padding-none">
+                                <div class="color-red">{{skillMeter level}}</div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+    </article>
 {{/if}}

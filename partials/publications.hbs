@@ -1,34 +1,48 @@
 {{#if resume.publications.length}}
-<section id="publications">
-	<h2>Publications</h2>
-	{{#each resume.publications}}
-	<div class="item">
-		{{#if name}}
-		<div class="name">
-			{{name}}
-		</div>
-		{{/if}}
-		{{#if publisher}}
-		<div class="publisher">
-			{{publisher}}
-		</div>
-		{{/if}}
-		{{#if releaseDate}}
-		<div class="releaseDate">
-			{{releaseDate}}
-		</div>
-		{{/if}}
-		{{#if website}}
-		<div class="website">
-			<a href="{{website}}">Link</a>
-		</div>
-		{{/if}}
-		{{#if summary}}
-		<div class="summary">
-			<p>{{summary}}</p>
-		</div>
-		{{/if}}
-	</div>
-	{{/each}}
-</section>
+    <article class="grid margin-section">
+        {{#each resume.publications}}
+            <section class="grid__col-12 grid__col-xs-4">
+                <div class="grid__cell{{#if @first}} border-top border-heavy{{/if}} padding-inline-top">
+                    <h4 class="color-red">
+                        {{#if @first}}
+                            Publications
+                        {{else}}
+                            &nbsp;&nbsp;
+                        {{/if}}
+                    </h4>
+                </div>
+            </section>
+            <section class="grid__col-12 grid__col-xs-8">
+                <div class="grid__cell border-top{{#if @first}} border-heavy{{/if}} padding-inline-top">
+                    <div class="grid">
+                        <div class="grid__col-8 padding-none">
+                            {{#if name}}
+                                <h4 class="position">{{name}}</h4>
+                            {{/if}}
+                            {{#if publisher}}
+                                <h5 class="color-grey work-company">{{publisher}}</h5>
+                            {{/if}}
+                            {{#if website}}
+                                <p><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
+                                    <a href="{{website}}">{{stripHTTP website}}</a>
+                                </p>
+                            {{/if}}
+                        </div>
+                        <div class="grid__col-4 padding-none right">
+                            <h5>
+                                {{#if releaseDate}}{{dateMY releaseDate}}{{/if}}
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid__col-12 padding-none">
+                            {{#if summary}}
+                                <p class="margin-inline-top margin-inline-bottom-xs justify">{{summary}}</p>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {{/each}}
+    </article>
 {{/if}}

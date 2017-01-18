@@ -1,0 +1,105 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    background: white;
+    padding: 20px 0;
+    margin: 0 0 20px 0;
+}
+.row:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+}
+.row [class*='col-']:last-of-type {
+    padding-right: 0;
+}
+
+.col-1 {
+    width: 8.333333%;
+}
+
+.col-2 {
+    width: 16.666667%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.333333%;
+}
+
+.col-5 {
+    width: 41.666667%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.333333%;
+}
+
+.col-8 {
+    width: 66.666667%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.333333%;
+}
+
+.col-11 {
+    width: 91.666667%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.module {
+    padding: 20px;
+    /*background: #eee;*/
+}
+
+/* Opt-in outside padding */
+.row-pad {
+    padding: 20px 0 20px 20px;
+}
+.row-pad [class*='col-']:last-of-type {
+    padding-right: 20px;
+}
+
+@media only screen and (min-width: 33.75em) {  /* 540px */
+    .container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 60em) { /* 960px */
+    .container {
+        width: 75%;
+        max-width: 60rem;
+    }
+}

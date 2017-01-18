@@ -1,0 +1,283 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 13px;
+    background-color: #e4e4e4;
+}
+
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+}
+
+.color-red {
+    color: #C00;
+}
+
+.color-grey {
+    color: #666;
+}
+
+[class*=grid__col-] {
+    padding: 0.5em 1em;
+}
+
+.padding-none {
+    padding: 0;
+}
+
+.padding-list {
+    padding: 0 0.625em 0.625em 0;
+}
+
+.padding-container {
+    padding: 3.125em 1.25em 2.25em;
+}
+
+.padding-top {
+    padding-top: 3.125em; /* 50px */
+}
+
+.padding-bottom-text {
+    padding-bottom: 0.625em; /* 10px */
+}
+
+.padding-inline-top {
+    padding-top: 0.625em; /* 20px */
+}
+
+.padding-inline-top-sm {
+    padding-top: 0.625em; /* 10px */
+}
+
+.padding-inline-bottom {
+    padding-bottom: 1.25em; /* 20px */
+}
+
+.padding-inline-bottom-sm {
+    padding-bottom: 0.625em; /* 10px */
+}
+
+
+.margin-header {
+    margin-top: 3.125em; /* 50px */
+}
+
+.margin-section {
+    margin-bottom: 3.5em; /* 88px */
+}
+
+.margin-inline-top {
+    margin-top: 1.25em; /* 20px */
+}
+
+.margin-inline-top-sm {
+    margin-top: 0.625em; /* 10px */
+}
+
+.margin-inline-bottom {
+    margin-bottom: 1.25em; /* 20px */
+}
+
+.margin-inline-bottom-sm {
+    margin-bottom: 0.625em; /* 10px */
+}
+
+.margin-inline-bottom-xs {
+    margin-bottom: 0.3125em; /* 5px */
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work-company {
+    display: block;
+}
+
+.work-company:before {
+    content: ""
+}
+
+.keyword-label {
+    background-color: #9e9e9e;
+    color: #ffffff;
+    padding: 0.3125em;
+    margin: 0 0.3125em 0.3125em 0;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #000;
+}
+
+.border-top {
+    border-top: 1px solid #000;
+}
+
+.border-heavy {
+    border-width: 2px;
+}
+
+
+ul.highlights li {
+    list-style-type: square;
+    list-style-position: outside;
+}
+
+@media only screen and (min-width: 480px) {
+    html,
+    body {
+        font-size: 13px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    [class*=grid__col-] {
+        padding: 1em;
+    }
+
+    .padding-none {
+        padding: 0;
+    }
+
+    .padding-list {
+        padding: 0 1em 1em 0;
+    }
+
+    .border-heavy {
+        border-width: 4px;
+    }
+
+    .margin-section {
+        margin-bottom: 5.5em; /* 88px */
+    }
+
+    .padding-inline-top {
+        padding-top: 1.25em; /* 20px */
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    html,
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 60rem;
+    }
+
+    .border-heavy {
+        border-width: 5px;
+    }
+
+    /*.work-company {
+        display: inline;
+    }
+
+    .work-company:before {
+        content: " | "
+    }*/
+}
+
+@media only screen and (min-width: 1200px) {
+    html,
+    body {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+
+}
+
+@media print {
+    /*@page {*/
+        /*margin: 1cm 1.2cm;*/
+    /*}*/
+
+    html,
+    body {
+        font-size: 13px;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .padding-container {
+        padding: 0;
+    }
+
+    .margin-section {
+        margin-bottom: 2em;
+    }
+
+    .margin-section:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .border-heavy {
+        border-width: 3px;
+    }
+
+    .keyword-label {
+        background-color: transparent;
+        color: #666;
+        border: 1px solid #444;
+        padding: 0.3125em;
+        margin: 0 0.3125em 0.3125em 0;
+    }
+
+    section.grid__col-12.grid__col-xs-8 {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+}
+
+/*@media only screen and (min-width: 33.75em) {  !* 540px *!*/
+    /*.container {*/
+        /*width: 80%;*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-width: 60em) { !* 960px *!*/
+    /*.container {*/
+        /*width: 75%;*/
+        /*max-width: 60rem;*/
+    /*}*/
+/*}*/

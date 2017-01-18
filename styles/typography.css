@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i,900,900i');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html,
+body {
+    font-family: "Nunito+Sans", "Helvetica Neue", Helvetica, sans-serif;
+    color: #333;
+}
+/* TYPOGRAPHY */
+
+p,
+li,
+span {
+    font-size: 0.875em;  /* 14 */
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+a {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-decoration: none;
+}
+a:link {
+    color: #CC0000;
+}
+a:visited {
+    color: #CC0000;
+}
+a:hover {
+    color: #FF0000;
+}
+a:active {
+    color: #CC0000;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 3em; /* 48 */
+    line-height: 0.9;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 2em; /* 32 */
+    line-height: 0.9;
+}
+
+h3 {
+    font-weight: 900;
+    font-size: 1.5em; /* 24 */
+    line-height: 0.9;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 1.125em; /* 18 */
+    line-height: 1.25;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 1em;  /* 16 */
+    line-height: 1.25;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 0.875em; /* 14 */
+    line-height: 1.25;
+}
+
+h1 > span,
+h2 > span,
+h3 > span,
+h4 > span,
+h5 > span,
+h6 > span {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-heavy {
+    font-weight: 900;
+}

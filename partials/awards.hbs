@@ -1,29 +1,25 @@
 {{#if resume.awards.length}}
-<section id="awards">
-	<h2>Awards</h2>
-	{{#each resume.awards}}
-	<div class="item">
-		{{#if title}}
-		<div class="title">
-			{{title}}
-		</div>
-		{{/if}}
-		{{#if date}}
-		<div class="date">
-			{{date}}
-		</div>
-		{{/if}}
-		{{#if awarder}}
-		<div class="awarder">
-			{{awarder}}
-		</div>
-		{{/if}}
-		{{#if summary}}
-		<div class="summary">
-			<p>{{summary}}</p>
-		</div>
-		{{/if}}
-	</div>
-	{{/each}}
-</section>
+    <article class="grid margin-section">
+        <section class="grid__col-12 grid__col-xs-4">
+            <div class="grid__cell border-top border-heavy padding-inline-top">
+                <h4 class="color-red">Awards</h4>
+            </div>
+        </section>
+
+        <section class="grid__col-12 grid__col-xs-8">
+            <div class="grid__cell border-top border-heavy padding-inline-top">
+                <div class="grid grid--justify-end">
+                    {{#each resume.awards}}
+                        <div class="grid__col-4 margin-inline-bottom padding-list">
+                            {{#if title}}<h5>{{title}}</h5>{{/if}}
+                            {{#if awarder}}<h6>{{awarder}}</h6>{{/if}}
+                            {{#if client}}<p>{{client}}</p>{{/if}}
+                            {{#if summary}}<p>{{summary}}</p>{{/if}}
+                            {{#if date}}<p>{{date}}</p>{{/if}}
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+    </article>
 {{/if}}
