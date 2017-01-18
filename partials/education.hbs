@@ -1,52 +1,57 @@
 {{#if resume.education.length}}
-<section id="education">
-	<h2>Education</h2>
-	{{#each resume.education}}
-	<div class="item">
-		<div class="date">
-			{{#if startDate}}
-			<span class="startDate">
-				{{startDate}}
-			</span>
-			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- Present
-			</span>
-			{{/if}}
-		</div>
-		{{#if institution}}
-		<div class="institution">
-			{{institution}}
-		</div>
-		{{/if}}
-		{{#if area}}
-		<div class="area">
-			{{area}}
-		</div>
-		{{/if}}
-		{{#if studyType}}
-		<div class="studyType">
-			{{studyType}}
-		</div>
-		{{/if}}
-		{{#if gpa}}
-		<div class="gpa">
-			GPA: {{gpa}}
-		</div>
-		{{/if}}
-		{{#if courses.length}}
-		<ul class="courses">
-			{{#each courses}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
-	</div>
-	{{/each}}
-</section>
+    <article class="grid margin-section">
+        {{#each resume.education}}
+            <section class="grid__col-12 grid__col-xs-4">
+                <div class="grid__cell{{#if @first}} border-top border-heavy{{/if}} padding-inline-top">
+                    <h4 class="color-red">
+                        {{#if @first}}
+                            Education
+                        {{else}}
+                            &nbsp;&nbsp;
+                        {{/if}}
+                    </h4>
+                </div>
+            </section>
+            <section class="grid__col-12 grid__col-xs-8">
+                <div class="grid__cell border-top{{#if @first}} border-heavy{{/if}} padding-inline-top">
+                    <div class="grid">
+                        <div class="grid__col-8 padding-none">
+                            {{#if studyType}}
+                                <h4 class="position">{{studyType}}</h4>
+                            {{/if}}
+                            {{#if institution}}
+                                <h5 class="color-grey work-company">{{institution}}</h5>
+                            {{/if}}
+                            {{#location}}
+                                <h6 class="color-grey">{{#if city}}{{city}}{{/if}}
+                                    {{#if countryCode}}, {{countryCode}}{{/if}}</h6>
+                            {{/location}}
+                            {{#if gpa}}
+                                <h6>GPA: {{gpa}}</h6>
+                            {{/if}}
+                        </div>
+                        <div class="grid__col-4 padding-none right">
+                            <h5>
+                                {{#if startDate}}{{dateMY startDate}}{{/if}}
+                                {{#if endDate}} - {{dateMY endDate}}
+                                {{else}} - Present
+                                {{/if}}
+                            </h5>
+                        </div>
+                    </div>
+                    {{#if courses.length}}
+                        <div class="grid margin-inline-top-sm grid--justify-end">
+                            {{#each courses}}
+                                <div class="grid__col-6 grid__col-xs-4 padding-none">
+                                    <div class="grid__cell keyword-label">
+                                        <p>{{.}}</p>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                </div>
+            </section>
+        {{/each}}
+    </article>
 {{/if}}

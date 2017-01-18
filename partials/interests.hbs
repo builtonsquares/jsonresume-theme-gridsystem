@@ -1,21 +1,39 @@
 {{#if resume.interests.length}}
-<section id="interests">
-	<h2>Interests</h2>
-	{{#each resume.interests}}
-	<div class="item">
-		{{#if name}}
-		<div class="name">
-			{{name}}
-		</div>
-		{{/if}}
-		{{#if keywords.length}}
-		<ul class="keywords">
-			{{#each keywords}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
-	</div>
-	{{/each}}
-</section>
+    <article class="grid margin-section">
+        {{#each resume.interests}}
+            <section class="grid__col-12 grid__col-xs-4">
+                <div class="grid__cell{{#if @first}} border-top border-heavy padding-inline-top{{/if}}">
+                    <h4 class="color-red">
+                        {{#if @first}}
+                            Interests
+                        {{else}}
+                            &nbsp;&nbsp;
+                        {{/if}}
+                    </h4>
+                </div>
+            </section>
+            <section class="grid__col-12 grid__col-xs-8">
+                <div class="grid__cell{{#if @first}} border-top border-heavy padding-inline-top{{/if}}">
+                    <div class="grid">
+                        <div class="grid__col-12 padding-none">
+                            {{#if name}}
+                                <h4 class="position">{{name}}</h4>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{#if keywords.length}}
+                        <div class="grid margin-inline-top-sm margin-inline-bottom-xs grid--justify-end">
+                            {{#each keywords}}
+                                <div class="grid__col-6 grid__col-xs-4 padding-none">
+                                    <div class="grid__cell keyword-label">
+                                        <p>{{.}}</p>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                </div>
+            </section>
+        {{/each}}
+    </article>
 {{/if}}

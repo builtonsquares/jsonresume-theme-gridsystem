@@ -1,52 +1,61 @@
 {{#if resume.work.length}}
-<section id="work">
-	<h2>Work</h2>
-	{{#each resume.work}}
-	<div class="item">
-		{{#if company}}
-		<h3 class="name">
-			{{company}}
-		</h3>
-		{{/if}}
-		<div class="date">
-			{{#if startDate}}
-			<span class="startDate">
-				{{startDate}}
-			</span>
-			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- Present
-			</span>
-			{{/if}}
-		</div>
-		{{#if position}}
-		<div class="position">
-			{{position}}
-		</div>
-		{{/if}}
-		{{#if website}}
-		<div class="website">
-			<a href="{{website}}">{{website}}</a>
-		</div>
-		{{/if}}
-		{{#if summary}}
-		<div class="summary">
-			<p>{{summary}}</p>
-		</div>
-		{{/if}}
-		{{#if highlights.length}}
-		<ul class="highlights">
-			{{#each highlights}}
-			<li>{{.}}</li>
-			{{/each}}
-		</ul>
-		{{/if}}
-	</div>
-	{{/each}}
-</section>
+    <article class="grid margin-section">
+        {{#each resume.work}}
+            <section class="grid__col-12 grid__col-xs-4">
+                <div class="grid__cell{{#if @first}} border-top border-heavy{{/if}} padding-inline-top">
+                    <h4 class="color-red">
+                        {{#if @first}}
+                            Experience
+                        {{else}}
+                            &nbsp;&nbsp;
+                        {{/if}}
+                    </h4>
+                </div>
+            </section>
+            <section class="grid__col-12 grid__col-xs-8">
+                <div class="grid__cell border-top{{#if @first}} border-heavy{{/if}} padding-inline-top">
+                    <div class="grid">
+                        <div class="grid__col-8 padding-none">
+                            {{#if position}}
+                                <h4 class="position">{{position}}</h4>
+                            {{/if}}
+                            {{#if company}}
+                                <h5 class="color-grey work-company">{{company}}</h5>
+                            {{/if}}
+                            {{#location}}
+                                <h6 class="color-grey">{{#if city}}{{city}}{{/if}}</h6>
+                            {{/location}}
+                            {{#if website}}
+                                <p><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
+                                    <a href="{{website}}">{{stripHTTP website}}</a>
+                                </p>
+                            {{/if}}
+                        </div>
+                        <div class="grid__col-4 padding-none right">
+                            <h5>
+                                {{#if startDate}}{{dateMY startDate}}{{/if}}
+                                {{#if endDate}} - {{dateMY endDate}}
+                                {{else}} - Present
+                                {{/if}}
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid__col-12 padding-none">
+                            {{#if summary}}
+                                <p class="margin-inline-top justify">{{summary}}</p>
+                            {{/if}}
+                            {{#if highlights.length}}
+                                <ul class="highlights margin-inline-top">
+                                    {{#each highlights}}
+                                        <li class="margin-inline-bottom-xs justify">{{.}}</li>
+                                    {{/each}}
+                                </ul>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {{/each}}
+    </article>
 {{/if}}
