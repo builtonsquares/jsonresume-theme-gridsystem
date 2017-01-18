@@ -1,6 +1,5 @@
 var fs = require('fs');
 var CleanCSS = require('clean-css');
-// var combine = require('css-combine');
 
 var input = [
   'styles/reset.css',
@@ -31,10 +30,3 @@ new CleanCSS(opts).minify(input, function (error, minified) {
     });
   });
 });
-// function combineCss() {
-//   combine(index).pipe(
-//     fs.createWriteStream(output)
-//   );
-// }
-
-// combineCss();
