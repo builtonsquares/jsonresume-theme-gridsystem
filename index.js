@@ -53,50 +53,35 @@
 
   Handlebars.registerHelper('skillMeter', function(level) {
 
-    var current,
-      meter = '',
-      total = 5;
+    var current = 0;
 
     if(isNaN(level)){
       // not a number
-      switch(level.toLowerCase()){
-        case 'expert':
-        case 'master':
-          current = 5;
-          break;
-        case 'advanced':
-          current = 4;
-          break;
-        case 'intermediate':
-          current = 3;
-          break;
-        case 'novice':
-          current = 2;
-          break;
-        case 'beginner':
-          current = 1;
-          break;
-        default:
-          current = 3;
-          break;
-      }
+      current = getLevelFromString(level);
     } else {
       current = parseInt(level);
     }
 
-    for (var i = 0; i < total; i++) {
-      if (i < current) {
-        meter += '<i class="fa fa-circle" aria-hidden="true"></i>&nbsp;'
-      } else {
-        meter += '<i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;'
-      }
-    }
-
-    return new Handlebars.SafeString(meter);
+    return current;
   });
 
-
-
+  function getLevelFromString(level) {
+    switch(level.toLowerCase()){
+      case 'expert':
+      case 'master':
+        return 5;
+      case 'advanced':
+        return 4;
+      case 'intermediate':
+        return 3;
+      case 'novice':
+        return 2;
+      case 'beginner':
+        return 1;
+      default:
+        return 3;
+    }
+  }
 
   function render(resume) {
     var css = fs.readFileSync(__dirname + '/style.css', 'utf-8');

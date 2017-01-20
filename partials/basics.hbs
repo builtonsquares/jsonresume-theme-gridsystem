@@ -26,20 +26,20 @@
 
             <ul>
                 {{#if phone}}
-                    <li><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp;
+                    <li><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i>&nbsp;
                         {{phone}}</li>
                 {{/if}}
                 {{#if website}}
-                    <li><i class="fa fa-external-link-square" aria-hidden="true"></i>&nbsp;
+                    <li><i class="fa fa-external-link-square fa-fw" aria-hidden="true"></i>&nbsp;
                         <a href="{{website}}">{{stripHTTP website}}</a></li>
                 {{/if}}
                 {{#if email}}
-                    <li><i class="fa fa-envelope-square" aria-hidden="true"></i>&nbsp;
+                    <li><i class="fa fa-envelope-square fa-fw" aria-hidden="true"></i>&nbsp;
                         <a href="mailto:{{email}}">{{email}}</a></li>
                 {{/if}}
                 {{#if profiles.length}}
                     {{#each profiles}}
-                        <li>{{#if network}}<i class="{{faIcon network}}" aria-hidden="true"></i>&nbsp;{{/if}}
+                        <li>{{#if network}}<i class="{{faIcon network}} fa-fw" aria-hidden="true"></i>&nbsp;{{/if}}
                             {{#if url}}<a href="{{url}}">{{#if username}}{{username}}{{/if}}</a>{{else}}{{#if username}}{{username}}{{/if}}{{/if}}
                         </li>
                     {{/each}}

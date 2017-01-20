@@ -139,6 +139,33 @@ body {
     border-width: 2px;
 }
 
+.rating {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+}
+
+.rating.rating-1-5:before {
+    content: "\f111 \2009 \f10c \2009 \f10c \2009 \f10c \2009 \f10c";
+}
+
+.rating.rating-2-5:before {
+    content: "\f111 \2009 \f111 \2009 \f10c \2009 \f10c \2009 \f10c";
+}
+
+.rating.rating-3-5:before {
+    content: "\f111 \2009 \f111 \2009 \f111 \2009 \f10c \2009 \f10c";
+}
+
+.rating.rating-4-5:before {
+    content: "\f111 \2009 \f111 \2009 \f111 \2009 \f111 \2009 \f10c";
+}
+
+.rating.rating-5-5:before {
+    content: "\f111 \2009 \f111 \2009 \f111 \2009 \f111 \2009 \f111";
+}
+
 
 ul.highlights li {
     list-style-type: square;
