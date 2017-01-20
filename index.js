@@ -51,37 +51,12 @@
     return str.replace(regexp, '');
   });
 
-  Handlebars.registerHelper('skillMeter', function(level) {
-
-    var current = 0;
-
-    if(isNaN(level)){
-      // not a number
-      current = getLevelFromString(level);
-    } else {
-      current = parseInt(level);
+  Handlebars.registerHelper('lowercase', function (str) {
+    if(str && typeof str === 'string') {
+      return str.toLowerCase();
     }
-
-    return current;
+    return str;
   });
-
-  function getLevelFromString(level) {
-    switch(level.toLowerCase()){
-      case 'expert':
-      case 'master':
-        return 5;
-      case 'advanced':
-        return 4;
-      case 'intermediate':
-        return 3;
-      case 'novice':
-        return 2;
-      case 'beginner':
-        return 1;
-      default:
-        return 3;
-    }
-  }
 
   function render(resume) {
     var css = fs.readFileSync(__dirname + '/style.css', 'utf-8');
@@ -95,7 +70,7 @@
         return;
       }
       var name = matches[1];
-      var filepath = path.join(partialsDir, filename)
+      var filepath = path.join(partialsDir, filename);
       var template = fs.readFileSync(filepath, 'utf8');
 
       Handlebars.registerPartial(name, template);

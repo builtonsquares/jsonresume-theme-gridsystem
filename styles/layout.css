@@ -146,26 +146,31 @@ body {
     display: inline-block;
 }
 
-.rating.rating-1-5:before {
+.rating.rating-beginner:before,
+.rating.rating-1:before {
     content: "\f111 \2009 \f10c \2009 \f10c \2009 \f10c \2009 \f10c";
 }
 
-.rating.rating-2-5:before {
+.rating.rating-novice:before,
+.rating.rating-2:before {
     content: "\f111 \2009 \f111 \2009 \f10c \2009 \f10c \2009 \f10c";
 }
 
-.rating.rating-3-5:before {
+.rating.rating-intermediate:before,
+.rating.rating-3:before {
     content: "\f111 \2009 \f111 \2009 \f111 \2009 \f10c \2009 \f10c";
 }
 
-.rating.rating-4-5:before {
+.rating.rating-advanced:before,
+.rating.rating-4:before {
     content: "\f111 \2009 \f111 \2009 \f111 \2009 \f111 \2009 \f10c";
 }
 
-.rating.rating-5-5:before {
+.rating.rating-expert:before,
+.rating.rating-master:before,
+.rating.rating-5:before {
     content: "\f111 \2009 \f111 \2009 \f111 \2009 \f111 \2009 \f111";
 }
-
 
 ul.highlights li {
     list-style-type: square;
